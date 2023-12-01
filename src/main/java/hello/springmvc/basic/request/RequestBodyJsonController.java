@@ -24,6 +24,7 @@ import java.nio.charset.StandardCharsets;
 public class RequestBodyJsonController {
 
     private ObjectMapper objectMapper = new ObjectMapper();
+
     @PostMapping("/request-body-json-v1")
     public void requestBodyJsonV1(HttpServletRequest request, HttpServletResponse response) throws Exception{
         ServletInputStream inputStream = request.getInputStream();

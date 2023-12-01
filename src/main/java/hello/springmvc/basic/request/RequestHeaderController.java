@@ -23,7 +23,8 @@ public class RequestHeaderController {
                           @RequestHeader MultiValueMap<String, String> headerMap ,
                           @RequestHeader("host") String host,
                           @CookieValue(value="myCookie", required = false) String cookie){
-
+        log.info("request.getRequestURI() = {} " , request.getRequestURI());
+        log.info("request.getRequestURL() = {} " , request.getRequestURL());
         log.info("request={}", request);
         log.info("response={}", response);
         log.info("httpMethod={}", httpMethod);

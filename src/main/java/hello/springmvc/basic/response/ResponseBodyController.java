@@ -41,7 +41,7 @@ public class ResponseBodyController {
         return new ResponseEntity<>(helloData, HttpStatus.CREATED);
     }
 
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.CREATED)
     @ResponseBody
     @GetMapping("/response-body-json-v2")
     public HelloData responseBodyJsonV2(){

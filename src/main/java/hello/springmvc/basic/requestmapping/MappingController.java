@@ -41,13 +41,19 @@ public class MappingController {
      * @PathVariable의 이름과 파라미터 이름이 같으면 생략할 수 있다.
      * 변수명이 같으면 파라미터에 @PathVariable로 바로 변수를 받을 수 있다.
      *
-     * @PathVariable("userId") String userId -> @PathVariable userId
+     * @PathVariable("userId") String userId -> @PathVariable String userId
      * /mapping/userA
      * @return
      */
     @GetMapping("/mapping/{userId}")
     public String mappingPath(@PathVariable String userId){
         log.info("userId = {}" , userId);
+        return "ok";
+    }
+
+    @GetMapping("/mapping2/{userid}")
+    public String mappingPath2(@PathVariable("userid") String userid){
+        log.info("userid = {} " , userid);
         return "ok";
     }
 

@@ -18,7 +18,7 @@ public class LogTestController {
 
 
     //@Controller은 반환값이 String이면 뷰 이름으로 인식되고, 뷰가 랜더링 된다.
-    //@RestController은 반호나 값으로 뷰를 찾는게 아니라 HTTP 메시지 바디에 바로 입력한다.
+    //@RestController은 반환 값으로 뷰를 찾는게 아니라 HTTP 메시지 바디에 바로 입력한다.
     @RequestMapping("/log-test")
     public String logTest(){
         String name = "Spring";

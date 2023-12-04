@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<script type="text/javascript">
+    function submit(actionVal){
+        frmSubmit.action = actionVal;
+        frmSubmit.submit();
+    }
+
+</script>
 <body>
 <ul>
     <li>로그 출력
@@ -61,7 +68,17 @@
     </li>
     <li>HTTP 요청 메시지
         <ul>
+            <form name="frmSubmit" action ="/request-body-string-v1" method="post">
+                <input type="text" name="test1" value="1"/>
+                <input type="text" name="test2" value="2"/>
+                <input type="text" name="test3" value="3"/>
+            </form>
             <li>POST MAN</li>
+            <li><a href="javascript:submit('/request-body-string-v1');">request-body-string-v1</a></li>
+            <li><a href="javascript:submit('/request-body-string-v2');">request-body-string-v2</a></li>
+            <li><a href="javascript:submit('/request-body-string-v3');">request-body-string-v3</a></li>
+            <li><a href="javascript:submit('/request-body-string-v3_request_response');">/request-body-string-v3_request_response</a></li>
+            <li><a href="javascript:submit('/request-body-string-v4');">request-body-string-v4</a></li>
         </ul>
     </li>
     <li>HTTP 응답 - 정적 리소스, 뷰 템플릿

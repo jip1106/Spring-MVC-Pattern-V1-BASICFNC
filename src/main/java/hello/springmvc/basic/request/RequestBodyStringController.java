@@ -22,6 +22,9 @@ import java.nio.charset.StandardCharsets;
 @Controller
 public class RequestBodyStringController {
 
+    //InputStream(Reader): HTTP 요청 메시지 바디의 내용을 직접 조회
+    //OutputStream(Writer): HTTP 응답 메시지의 바디에 직접 결과 출력
+
     @PostMapping("/request-body-string-v1")
     public void requestBodyString(HttpServletRequest request, HttpServletResponse response) throws Exception{
         ServletInputStream inputStream = request.getInputStream();
@@ -32,6 +35,7 @@ public class RequestBodyStringController {
         response.getWriter().write("ok");
     }
 
+    //InputStream , OutputStream 파라미터 지원
     @PostMapping("/request-body-string-v2")
     public void requestBodyStringV2(InputStream inputStream, Writer responseWriter) throws Exception{
 

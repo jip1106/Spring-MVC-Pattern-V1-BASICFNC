@@ -87,6 +87,7 @@ public class RequestParamController {
     //파라미터를 list로 조회하기
     // @RequestParam("명칭") List<String> paramList -> "명칭"과 변수명 paramList 가 같으면 name 생략 가능
     // @RequestParam List<String> paramList
+    //http://localhost:9090/request-param-list?paramList=1,2,3,4,5,6,,7
     @RequestMapping("/request-param-list")
     @ResponseBody
     public String requestParamMap(@RequestParam("paramList") List<String> paramList) {
@@ -102,6 +103,7 @@ public class RequestParamController {
     }
 
     //파라미터를 map 으로 조회하기
+    //http://localhost:9090/request-param-map?name=jun&name=il&name=park&age=10
     @RequestMapping("/request-param-map")
     @ResponseBody
     public String requestParamMap(@RequestParam Map<String, Object> paramMap,
